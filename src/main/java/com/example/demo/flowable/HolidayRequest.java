@@ -1,6 +1,11 @@
-package com.example.flowable.demo;
+package com.example.demo.flowable;
 
-import org.flowable.engine.*;
+import org.flowable.engine.HistoryService;
+import org.flowable.engine.ProcessEngine;
+import org.flowable.engine.ProcessEngineConfiguration;
+import org.flowable.engine.RepositoryService;
+import org.flowable.engine.RuntimeService;
+import org.flowable.engine.TaskService;
 import org.flowable.engine.history.HistoricActivityInstance;
 import org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration;
 import org.flowable.engine.repository.Deployment;
@@ -22,10 +27,10 @@ public class HolidayRequest {
 
     public static void main(String[] args) {
         ProcessEngineConfiguration cfg = new StandaloneProcessEngineConfiguration()
-                .setJdbcUrl("jdbc:mysql:localhost:3306/flowable-demo")
+                .setJdbcUrl("jdbc:mysql://192.168.1.221:3306/flowable-demo")
                 .setJdbcUsername("root")
                 .setJdbcPassword("123456")
-                .setJdbcDriver("com.mysql.jdbc.Driver")
+                .setJdbcDriver("com.mysql.cj.jdbc.Driver")
                 .setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
 
 
